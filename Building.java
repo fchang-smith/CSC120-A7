@@ -106,9 +106,11 @@ public class Building {
         System.out.println("Demonstrating enter/exit/navigation");
         System.out.println("-----------------------------------");
         fordHall.enter();
-        fordHall.goUp();
+        fordHall.goToFloor(3);
+        fordHall.goDown();
         fordHall.goDown();
         fordHall.exit();
+
     }
 
 }
