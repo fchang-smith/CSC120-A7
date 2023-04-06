@@ -34,6 +34,7 @@ public class Cafe extends Building{
         this.nSugarPackets += nSugarPackets;
         this.nCreams += nCreams;
         this.nCups += nCups;
+        System.out.println("Restock! \nCoffeeOuwnces: " + this.nCoffeeOunces + "\nSugarPacket: " + this.nSugarPackets + "\nCreams: "+ this.nCreams + "\nCups: " + this.nCups);
     }
 
     public void showOptions() {
@@ -62,6 +63,7 @@ public class Cafe extends Building{
         myCafe.showOptions();
         myCafe.enter();
         myCafe.goUp(4);
+        myCafe.restock(10, 10, 10, 10);
     }
     
     
