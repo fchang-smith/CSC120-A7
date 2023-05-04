@@ -58,6 +58,14 @@ public class Cafe extends Building{
         }
     }
 
+    public void goToFloor(int floorNum) {
+        if (this.hasElevator) {
+            
+        } else {
+            super.goToFloor(floorNum);
+        }
+    }
+
     public static void main(String[] args) {
         Cafe myCafe = new Cafe("null", "null", 4, 0, 0, 0, 0, false);
         myCafe.showOptions();
