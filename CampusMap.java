@@ -33,6 +33,10 @@ public class CampusMap {
         return b;
     }
 
+    /**
+     * Overrided toString 
+     * @return String 
+     */
     public String toString() {
         String mapString = "DIRECTORY of BUILDINGS";
 
@@ -46,6 +50,16 @@ public class CampusMap {
         CampusMap myMap = new CampusMap();
         myMap.addBuilding(new Building("Ford Hall", "100 Green Street Northampton, MA 01063", 4));
         myMap.addBuilding(new Building("Bass Hall", "4 Tyler Court Northampton, MA 01063", 4));
+        myMap.addBuilding(new House("Talbot", "25 Prospect St, Northampton, MA 01060", 4, null, false, false));
+        myMap.addBuilding(new Cafe("CC cafe", "100 Elm St, Northampton, MA 01063", 1));
+        myMap.addBuilding(new House("Cutter-Ziskind", "1 Henshaw Ave, Northampton, MA 01063", 4, null, true, true));
+        myMap.addBuilding(new Library("Neilson", "7 Neilson Drive, Northampton, MA 01063", 4, true));
+        myMap.addBuilding(new House("Tyler", "151-199 Green St, Northampton, MA 01060", 4));
+        myMap.addBuilding(new Building("Burton Hall", "46 College Ln, Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Sabin-reed", "44 College Ln, Northampton, MA 01063", 4));
+        myMap.addBuilding(new House("Chapin House", "Northampton, MA 01063", 4));
+        myMap.addBuilding(new Building("Seelye Hall", "Northampton, MA 01063", 4));
+        myMap.addBuilding(new House("King-Scales", "Northampton, MA 01063", 4));
         System.out.println(myMap);
     }
     
