@@ -1,4 +1,6 @@
-/* This is a stub for the Library class */
+/**
+ * Library class extends Building class
+ */
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Enumeration;
