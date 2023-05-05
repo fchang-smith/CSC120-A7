@@ -1,3 +1,6 @@
+/**
+ * Building class with basic methods
+ */
 public class Building {
 
     protected String name;
@@ -5,23 +8,37 @@ public class Building {
     protected int nFloors;
     protected int activeFloor = -1; // Default value indicating we are not inside this building
 
-    /* Default constructor */
+    /**
+     * Default constructor
+     */
     public Building() {
         this("<Name Unknown>", "<Address Unknown>", 1);
     }
 
-    /* Overloaded constructor with address only */
+    /**
+     * Overloaded constructor with address only
+     * @param address String building address
+     */
     public Building(String address) {
         this(); // Call default constructor
         this.address = address; // Override address
     }
 
-    /* Overloaded constructor with name, address */
+    /**
+     * Overloaded constructor with name, address
+     * @param name name of the building
+     * @param address address of the building
+     */
     public Building(String name, String address) {
         this(name, address, 1); // Call full constructor with hard-coded # floors
     }
 
-    /* Full constructor */
+    /**
+     * Full constructor
+     * @param name building name
+     * @param address building address
+     * @param nFloors total number of floors
+     */
     public Building(String name, String address, int nFloors) {
         if (name != null) { this.name = name; }
         if (address != null) { this.address = address; } 
@@ -31,20 +48,34 @@ public class Building {
         this.nFloors = nFloors;
     }
 
-    /* Accessors */
+    /**
+     * Accessors 
+     * @return building name
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Accessors 
+     * @return building address
+     */
     public String getAddress() {
         return this.address;
     }
 
+    /**
+     * Accessors 
+     * @return total number of floors
+     */
     public int getFloors() {
         return this.nFloors;
     }
 
-    /* Navigation methods */
+    /**
+     * Enter the building
+     * @return return the building entered
+     */
     public Building enter() {
         if (activeFloor != -1) {
             throw new RuntimeException("You are already inside this Building.");
@@ -54,6 +85,10 @@ public class Building {
         return this; // Return a pointer to the current building
     }
 
+    /**
+     * Exit the building
+     * @return return the building left
+     */
     public Building exit() {
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before exit().");
@@ -66,6 +101,10 @@ public class Building {
         return null; // We're outside now, so the building is null
     }
 
+    /**
+     * Go to a specific floor
+     * @param floorNum The floor number want to go to
+     */
     public void goToFloor(int floorNum) {
         if (this.activeFloor == -1) {
             throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");
@@ -77,18 +116,30 @@ public class Building {
         this.activeFloor = floorNum;
     }
 
+    /**
+     * Go up one floor
+     */
     public void goUp() {
         this.goToFloor(this.activeFloor + 1);
     }
 
+    /**
+     * Go down one floor
+     */
     public void goDown() {
         this.goToFloor(this.activeFloor - 1);
     }
 
+    /**
+     * Show a list of methods
+     */
     public void showOptions() {
         System.out.println("Available options at " + this.name + ":\n + enter() \n + exit() \n + goUp() \n + goDown()\n + goToFloor(n)");
     }
 
+    /**
+     * Overrided toString method
+     */
     public String toString() {
         return this.name + " is a " + this.nFloors + "-story building located at " + this.address + ".";
     }
