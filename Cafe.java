@@ -1,6 +1,12 @@
-/* This is a stub for the Cafe class */
+/**
+ * Cafe class extends Building class
+ */
 public class Cafe extends Building{
 
+    private String name;
+    private String address;
+    private int nFloors;
+    private int activeFloor = -1;
     private int nCoffeeOunces = 10; // The number of ounces of coffee remaining in inventory
     private int nSugarPackets = 10; // The number of sugar packets remaining in inventory
     private int nCreams = 10; // The number of "splashes" of cream remaining in inventory
@@ -60,7 +66,13 @@ public class Cafe extends Building{
 
     public void goToFloor(int floorNum) {
         if (this.hasElevator) {
-            
+            if (this.activeFloor == -1) {
+                throw new RuntimeException("You are not inside this Building. Must call enter() before navigating between floors.");
+            }
+            if (floorNum < 1 || floorNum > this.nFloors) {
+                throw new RuntimeException("Invalid floor number. Valid range for this Building is 1-" + this.nFloors +".");
+            }
+            System.out.println("You are at floor " + );
         } else {
             super.goToFloor(floorNum);
         }
