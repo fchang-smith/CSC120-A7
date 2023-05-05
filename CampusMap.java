@@ -1,5 +1,7 @@
 import java.util.ArrayList;
-
+/**
+ * CampusMap class include buildings 
+ */
 public class CampusMap {
 
     ArrayList<Building> buildings;
